@@ -12,7 +12,7 @@ const NewTodoForm = ({ onSubmit }) => {
   return (
     <form className="new-item-form">
       <div className="form-row">
-        <label htmlFor="item">New Item {newItem}</label>
+        <label htmlFor="item">New Item</label>
         <input
           value={newItem}
           type="text"

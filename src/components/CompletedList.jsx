@@ -1,25 +1,29 @@
-const TodoList = ({ todos, toggleTodo, handleDelete, handleComplete }) => {
+const CompletedList = ({
+  completed,
+  toggleCompleteTodo,
+  handleCompleteDelete,
+  handleUnComplete,
+}) => {
   return (
     <>
       <ul className="list">
-        {todos.length === 0 && "No Todos, Add an item and click the Add button"}
-        {todos.map((mappedTodo) => (
+        {completed.map((mappedTodo) => (
           <li key={mappedTodo.id}>
             <label>
               <input
                 type="checkbox"
                 checked={mappedTodo.completed}
                 onChange={(e) => {
-                  handleComplete(mappedTodo);
-                  toggleTodo(mappedTodo.id, e.target.checked);
-                  handleDelete(mappedTodo.id);
+                  toggleCompleteTodo(mappedTodo.id, e.target.checked);
+                  handleUnComplete(mappedTodo);
+                  handleCompleteDelete(mappedTodo.id);
                 }}
               />
               {mappedTodo.title}
             </label>
             <button
               className="btn btn-danger"
-              onClick={() => handleDelete(mappedTodo.id)}
+              onClick={() => handleCompleteDelete(mappedTodo.id)}
             >
               Delete
             </button>
@@ -30,4 +34,4 @@ const TodoList = ({ todos, toggleTodo, handleDelete, handleComplete }) => {
   );
 };
 
-export default TodoList;
+export default CompletedList;
