@@ -12,7 +12,7 @@ const CompletedList = ({
             <label>
               <input
                 type="checkbox"
-                checked={mappedTodo.completed}
+                checked={true}
                 onChange={(e) => {
                   toggleCompleteTodo(mappedTodo.id, e.target.checked);
                   handleUnComplete(mappedTodo);
